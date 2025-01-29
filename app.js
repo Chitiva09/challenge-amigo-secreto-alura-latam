@@ -4,9 +4,9 @@ let amigos= [];
 
 //con esta funcion quiero asignar nombres a una lista en el html
 function asignarListaAmigos (id, mensaje){
-let elementoHTML = document.getElementById(id);
-elementoHTML.innerHTML=mensaje;
-return;
+    let elementoHTML = document.getElementById(id);
+    elementoHTML.innerHTML=mensaje;
+    return;
 }
 
 function agregarAmigo(){
@@ -42,6 +42,17 @@ function agregarAmigo(){
                 }
         }
 }
+
+function sortearAmigo(){
+
+
+    if (amigos.length===0){
+        
+    }else{
+
+    }
+}
+
 //con esta funcion hago que se borre lo que el usuario haya escrito en la caja de texto
 function limpiarCajon (){
     document.querySelector("#amigo").value="";
@@ -66,5 +77,5 @@ function mensajeCajaTexto(mensaje){
         imputAmigo.placeholder="Escribe un nombre";
         imputAmigo.style.border = "";
     }
-console.log("")
+
 }
