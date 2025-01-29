@@ -66,4 +66,5 @@ function mensajeCajaTexto(mensaje){
         imputAmigo.placeholder="Escribe un nombre";
         imputAmigo.style.border = "";
     }
+console.log("")
 }
