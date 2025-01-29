@@ -45,11 +45,12 @@ function agregarAmigo(){
 
 function sortearAmigo(){
 
-
+    
     if (amigos.length===0){
-        
+        mensajeCajaTexto("Por favor, inserte un nombre.");
     }else{
-
+        let numeroIndice= Math.floor(Math.random()*amigos.length);
+        asignarListaAmigos("textoDigite","Tu amigo secreto es "+amigos[numeroIndice])
     }
 }
 
