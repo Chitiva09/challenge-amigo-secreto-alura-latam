@@ -1,6 +1,6 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 let amigos= [];
-
+let amigosSorteados=[];
 
 //con esta funcion quiero asignar nombres a una lista en el html
 function asignarListaAmigos (id, mensaje){
@@ -17,8 +17,13 @@ function agregarAmigo(){
         if (nombreAmigo.trim()===""){
             //hago llamado a la funcion para que muestre el mensaje en la caja de texto en caso de que no se ingrese un nombre valido 
             mensajeCajaTexto("Por favor, inserte un nombre.");
-
-            }else{
+            return;
+        }
+        //con este if valido si el nombre que esta escrribiendo el usuario ya esta en la lista
+        if (amigos.includes(nombreAmigo)) {
+                mensajeCajaTexto("El nombre " + nombreAmigo + " ya existe.");
+                return;
+        }
 
                 //aca tomo el nombre ingresado y lo guardo en el array amigos
                 amigos.push(nombreAmigo)
@@ -26,26 +31,32 @@ function agregarAmigo(){
                 mensajeCajaTexto("");
                 //con esta linea de codigo limpio la caja de texto para ingresar un nuevo amigo 
                 limpiarCajon();
-                // lista amigo es el array que se muestra en el html y muestro lo que tenga en el array amigos
-                asignarListaAmigos("listaAmigos",amigos);
-                //acá limpio la lista existente en la caja de texto para que no se duplique lo que ya haya
-                listaAmigos.innerHTML="";
 
-                //con este for hago que los nombres aparzcan en line y no seguidos
-                for (let i=0 ;i<amigos.length;i++){ 
-                    //acá por cada iteracion se crea u elemento <li>
-                    let li = document.createElement("li");
-                    //acá le asigno a <li> el nombre que este en la caja de texto en esa iteraccion[i]
-                    li.textContent= amigos[i];
-                    //acá usando el appendChild hago que en listaAmigos que es el padre se creen hijos en orden <li> 
-                    listaAmigos.appendChild(li);
-                }
+                actualizarListaAmigos();
+}
+
+function actualizarListaAmigos(){
+    // lista amigo es el array que se muestra en el html y muestro lo que tenga en el array amigos
+    asignarListaAmigos("listaAmigos",amigos);
+    //acá limpio la lista existente en la caja de texto para que no se duplique lo que ya haya
+    listaAmigos.innerHTML="";
+
+        //con este for hago que los nombres aparzcan en line y no seguidos
+        for (let i=0 ;i<amigos.length;i++){ 
+            //acá por cada iteracion se crea u elemento <li>
+            let li = document.createElement("li");
+            //acá le asigno a <li> el nombre que este en la caja de texto en esa iteraccion[i]
+            li.textContent= amigos[i];
+            //acá usando el appendChild hago que en listaAmigos que es el padre se creen hijos en orden <li> 
+            listaAmigos.appendChild(li);
         }
+
+
 }
 
 function sortearAmigo(){
 
-    
+
     if (amigos.length===0){
         mensajeCajaTexto("Por favor, inserte un nombre.");
     }else{
