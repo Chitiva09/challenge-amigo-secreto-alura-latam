@@ -56,13 +56,20 @@ function actualizarListaAmigos(){
 
 function sortearAmigo(){
 
-
     if (amigos.length===0){
         mensajeCajaTexto("Por favor, inserte un nombre.");
-    }else{
+        return;
+    }
+    if (amigosSorteados.length===amigos.length){
+        asignarListaAmigos("textoDigite","Ya se sortearon todos los amgos")
+        return;
+    }
+        
+        
         let numeroIndice= Math.floor(Math.random()*amigos.length);
         asignarListaAmigos("textoDigite","Tu amigo secreto es "+amigos[numeroIndice])
-    }
+        amigosSorteados.push(numeroIndice)
+    console.log(amigosSorteados);
 }
 
 //con esta funcion hago que se borre lo que el usuario haya escrito en la caja de texto
