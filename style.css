@@ -160,3 +160,43 @@ ul {
 .button-draw:hover {
     background-color: var(--color-button-hover);
 }
+
+/* Estilos para el botón "Finalizar Juego" */
+.button-end {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 10px 40px;
+    color: var(--color-white);
+    background-color: #ff4d4d; /* Rojo llamativo */
+    font-size: 16px;
+    border: 2px solid #000;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    margin-top: 10px; /* Espacio entre los botones */
+}
+.button-end:disabled {
+    background-color: #ccc; /* Color gris para indicar que está inactivo */
+    color: #666; /* Texto más tenue */
+    border-color: #aaa; /* Borde con menor contraste */
+    cursor: not-allowed; /* Cambia el cursor para indicar que no se puede hacer clic */
+    opacity: 0.6; /* Hace que el botón se vea apagado */
+}
+.icono {
+    width: 30px;  /* Ajusta el ancho del icono */
+    height: 30px; /* Ajusta la altura del icono */
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+}
+.button-end img {
+    margin-right: 40px;
+}
+
+.button-end:hover {
+    background-color: #cc0000; /* Rojo más oscuro al pasar el mouse */
+}
+
+.button-end:active {
+    background-color: #990000; /* Rojo aún más oscuro al hacer clic */
+}
